@@ -12,6 +12,7 @@ const title = computed(() => t('seo.title'))
 const description = computed(() => t('seo.description'))
 const canonical = computed(() => locale.value === 'en' ? `${siteUrl}/en` : siteUrl)
 const ogLocale = computed(() => locale.value === 'en' ? 'en_CM' : 'fr_CM')
+const ogImage = `${siteUrl}/images/og-cover.jpg`
 
 useSeoMeta({
   title,
@@ -21,12 +22,15 @@ useSeoMeta({
   ogType: 'website',
   ogLocale,
   ogUrl: canonical,
-  ogImage: `${siteUrl}/images/audiologiste-patient-1152.webp`,
+  ogImage,
   ogImageAlt: () => t('seo.ogImageAlt'),
+  ogImageType: 'image/jpeg',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   twitterCard: 'summary_large_image',
   twitterTitle: title,
   twitterDescription: description,
-  twitterImage: `${siteUrl}/images/audiologiste-patient-1152.webp`,
+  twitterImage: ogImage,
   robots: 'index, follow, max-image-preview:large',
 })
 
@@ -51,7 +55,7 @@ useHead(() => ({
         '@type': ['MedicalBusiness', 'LocalBusiness'],
         name: 'Empire Audition Douala',
         description: description.value,
-        image: `${siteUrl}/images/audiologiste-patient-1152.webp`,
+        image: ogImage,
         telephone: '+237695195832',
         priceRange: '₣₣',
         address: {
