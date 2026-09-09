@@ -1,0 +1,232 @@
+{
+  "skipToContent": "Skip to content",
+  "brand": {
+    "tagline": "Clinical audiology · Douala",
+    "homeAria": "Empire Audition, back to home"
+  },
+  "nav": {
+    "main": "Main navigation",
+    "mobile": "Mobile navigation",
+    "footer": "Footer navigation",
+    "services": "Services",
+    "devices": "Hearing aids",
+    "clinic": "The clinic",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "book": "Book an appointment",
+    "callClinic": "Call the clinic",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "lang": {
+    "label": "Language",
+    "fr": "FR",
+    "en": "EN",
+    "switchToFr": "Afficher le site en français",
+    "switchToEn": "Display the site in English"
+  },
+  "hero": {
+    "eyebrow": "Douala’s reference audiology clinic",
+    "title": "Hear life again,",
+    "titleEm": "fully.",
+    "lead": "Complete hearing assessments, tailored medical support and discreet devices to enjoy clear conversations with the people you love.",
+    "ctaBook": "Book an appointment",
+    "ctaScreening": "Get a hearing test",
+    "trustAria": "Our commitments",
+    "trust30": "30 days",
+    "trust30Small": "Trial with no commitment",
+    "trustCustom": "Custom fit",
+    "trustCustomSmall": "Clinical care pathway",
+    "trustDiscrete": "Very discreet",
+    "trustDiscreteSmall": "Near-invisible technology",
+    "imageAlt": "Audiologist examining a patient’s ear with an audiometry headset in Douala",
+    "badgeTitle": "Consultations in Douala",
+    "badgePlace": "Kotto Briquiny",
+    "open": "Open"
+  },
+  "offer": {
+    "kicker": "Introductory offer",
+    "limited": "Limited slots",
+    "titleBefore": "Complete hearing assessment for",
+    "body": "Video otoscopy, pure-tone and speech audiometry, personalised diagnosis and fitting advice with Edith Kingue.",
+    "cta": "Claim the offer"
+  },
+  "services": {
+    "eyebrow": "Clinical excellence",
+    "title": "Our specialised audiology services",
+    "lead": "Medical and technological solutions to protect, restore and improve your hearing health.",
+    "bookFor": "Book an appointment for {title}",
+    "book": "Book an appointment",
+    "items": [
+      {
+        "title": "Complete hearing assessment & screening",
+        "description": "Otoscopy, tympanometry, pure-tone and speech audiometry in a soundproof booth to measure your hearing thresholds precisely."
+      },
+      {
+        "title": "Custom hearing-aid fitting",
+        "description": "Digital hearing aids chosen for your hearing profile, ear shape and everyday professional or family life."
+      },
+      {
+        "title": "Tuning, repair & maintenance",
+        "description": "Ultrasonic cleaning, filter replacement and frequency recalibration in our Douala laboratory."
+      },
+      {
+        "title": "Unlimited personalised follow-up",
+        "description": "We refine your settings over time and monitor how your hearing evolves, without rushing."
+      },
+      {
+        "title": "Tinnitus relief",
+        "description": "Habituation protocols, sound therapy and personalised acoustic masking for calmer nights."
+      },
+      {
+        "title": "Custom hearing protection",
+        "description": "Anatomical earplugs for industry, music, swimming and demanding sound environments."
+      }
+    ]
+  },
+  "metrics": {
+    "yearsValue": "+08 yrs",
+    "years": "of clinical expertise",
+    "patientsValue": "+1,500",
+    "patients": "patients supported",
+    "satisfactionValue": "98.6%",
+    "satisfaction": "satisfaction",
+    "lifetimeValue": "Lifetime",
+    "lifetime": "settings follow-up"
+  },
+  "science": {
+    "eyebrow": "Why choose us",
+    "title": "Scientific rigour, with human empathy",
+    "body": "Hearing loss isolates people gradually. Our mission is to restore your peace of mind with precise measurements, discreet technology and sincere listening.",
+    "certTitle": "Specialised audiology centre",
+    "certSmall": "ENT protocols and personalised support",
+    "pillars": [
+      {
+        "title": "Human listening & empathy",
+        "description": "Every session respects your pace, habits and acoustic experience."
+      },
+      {
+        "title": "High-precision measurements",
+        "description": "Computerised audiometric equipment for adjustments accurate to the decibel."
+      },
+      {
+        "title": "International technologies",
+        "description": "Phonak, Oticon, Signia and Starkey with support and warranty."
+      },
+      {
+        "title": "Accessible clinic in Douala",
+        "description": "In Kotto Briquiny, with parking and senior-friendly reception."
+      }
+    ]
+  },
+  "tech": {
+    "imageAlt": "Discreet rechargeable hearing aids at the Empire Audition clinic",
+    "badgeTitle": "Over 30 hours of battery life",
+    "badgeSmall": "Fast inductive charging",
+    "eyebrow": "Hearing technologies",
+    "title": "Acoustic excellence, almost imperceptible",
+    "body": "Modern devices separate voices from background noise and adapt automatically to your environment.",
+    "feature1": "Invisible in-the-ear aids",
+    "feature1Small": "Custom-moulded to the millimetre for total discretion.",
+    "feature2": "Rechargeable mini RICs",
+    "feature2Small": "A full day of listening without handling batteries.",
+    "feature3": "Intelligent filtering",
+    "feature3Small": "Clearer voices at restaurants, in meetings or in traffic.",
+    "cta": "Request a free trial"
+  },
+  "expert": {
+    "imageAlt": "Edith Kingue in an audiologist’s coat presenting a hearing aid in her clinic",
+    "eyebrow": "Clinical leadership",
+    "role": "General audioprosthetist & CEO of Empire Audition",
+    "quote": "Hearing well is not a luxury. It is the sensory bond that connects us to the people we love.",
+    "body": "Edith Kingue brings her expertise and sensitivity to hearing health in Douala, with progressive rehabilitation where patient comfort matters as much as acoustic precision.",
+    "cred1": "Hearing technician",
+    "cred2": "Family support",
+    "cred3": "Auditory rehabilitation specialist",
+    "cred4": "Consultations in Kotto, Douala"
+  },
+  "testimonials": {
+    "eyebrow": "Patient experiences",
+    "title": "They rediscovered the joy of listening",
+    "lead": "Patient journeys supported with precision, patience and kindness in Douala.",
+    "starsAria": "5 stars",
+    "items": [
+      {
+        "quote": "Thanks to Ms Kingue, I rediscovered family conversations without asking my grandchildren to repeat themselves. The assessment was reassuring and the support remarkably gentle.",
+        "name": "Papa Emmanuel M.",
+        "role": "Retired executive · Bonapriso"
+      },
+      {
+        "quote": "Rare professionalism in Douala. My devices are invisible and the migraine headaches from listening fatigue are gone.",
+        "name": "Clarisse N.",
+        "role": "Finance director · Akwa"
+      },
+      {
+        "quote": "My tinnitus disrupted my sleep for three years. Empire Audition’s personalised protocol transformed my nights.",
+        "name": "Théodore K.",
+        "role": "Teacher · Bonamoussadi"
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Direct booking",
+    "title": "Book an appointment at the clinic",
+    "lead": "Tell us what you need. You can send your request straight to our team on WhatsApp.",
+    "name": "Full name *",
+    "namePlaceholder": "e.g. Pierre Bella",
+    "phone": "Phone / WhatsApp *",
+    "phonePlaceholder": "+237 6XX XX XX XX",
+    "service": "Requested service",
+    "date": "Preferred date",
+    "message": "Optional message",
+    "messagePlaceholder": "Briefly describe your discomfort or need.",
+    "submit": "Prepare my request",
+    "readyTitle": "Your request is ready.",
+    "readyBody": "Check the details, then send them to our team.",
+    "sendWhatsapp": "Send on WhatsApp",
+    "contactAria": "Clinic contact details",
+    "centerLabel": "Audiology centre · Douala",
+    "address": "Address",
+    "addressValue": "Kotto, rue des Pavés, Briquiny, Douala",
+    "phoneLabel": "Direct line",
+    "hours": "Opening hours",
+    "hoursValue": "Mon–Fri: 8:30–18:00\nSat: 9:00–14:00",
+    "chatWhatsapp": "Chat on WhatsApp",
+    "mapAlt": "Map to the Empire Audition clinic in Kotto Briquiny, Douala",
+    "directions": "Get directions · Parking available",
+    "whatsappIntro": "Hello Empire Audition, I would like to book an appointment.",
+    "whatsappName": "Name",
+    "whatsappPhone": "Phone",
+    "whatsappService": "Service",
+    "whatsappDate": "Preferred date",
+    "whatsappNote": "Note",
+    "services": [
+      "Complete hearing assessment – 10,000 FCFA",
+      "Hearing-aid trial – 30 days",
+      "Hearing-aid tuning or maintenance",
+      "Tinnitus consultation",
+      "Custom hearing protection"
+    ]
+  },
+  "footer": {
+    "blurb": "Hearing assessments, discreet devices, rehabilitation and personalised follow-up in the heart of Douala.",
+    "trust": "Specialised audiology centre",
+    "hearing": "Your hearing",
+    "linkScreening": "Complete hearing assessment",
+    "linkDevices": "Hearing aids",
+    "linkCare": "Our support",
+    "linkReviews": "Patient reviews",
+    "clinic": "The clinic",
+    "hoursShort": "Mon–Fri 8:30–18:00 · Sat 9:00–14:00",
+    "help": "Need help?",
+    "helpBody": "Unsure about your hearing or need a device adjusted? Our team is here.",
+    "ask": "Ask for advice",
+    "rights": "© {year} Empire Audition Douala. All rights reserved.",
+    "disclaimer": "Health information for guidance only — only a clinical examination can provide a diagnosis."
+  },
+  "seo": {
+    "title": "Empire Audition | Hearing Care & Hearing Assessment",
+    "description": "Audiology clinic in Douala: hearing assessment, discreet rechargeable hearing aids, tinnitus care, tuning and personalised follow-up with Edith Kingue.",
+    "ogImageAlt": "Audiology consultation at Empire Audition in Douala"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "skipToContent": "Aller au contenu",
+  "brand": {
+    "tagline": "Audiologie clinique · Douala",
+    "homeAria": "Empire Audition, retour à l’accueil"
+  },
+  "nav": {
+    "main": "Navigation principale",
+    "mobile": "Navigation mobile",
+    "footer": "Navigation du pied de page",
+    "services": "Services",
+    "devices": "Appareils",
+    "clinic": "Le cabinet",
+    "testimonials": "Témoignages",
+    "contact": "Contact",
+    "book": "Prendre rendez-vous",
+    "callClinic": "Appeler le cabinet",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "lang": {
+    "label": "Langue",
+    "fr": "FR",
+    "en": "EN",
+    "switchToFr": "Afficher le site en français",
+    "switchToEn": "Display the site in English"
+  },
+  "hero": {
+    "eyebrow": "Cabinet de référence en audiologie à Douala",
+    "title": "Réentendez la vie,",
+    "titleEm": "pleinement.",
+    "lead": "Bilans auditifs complets, accompagnement médical sur mesure et appareils discrets pour retrouver le plaisir d’écouter vos proches avec clarté.",
+    "ctaBook": "Prendre rendez-vous",
+    "ctaScreening": "Faire un bilan auditif",
+    "trustAria": "Nos engagements",
+    "trust30": "30 jours",
+    "trust30Small": "Essai sans engagement",
+    "trustCustom": "Sur mesure",
+    "trustCustomSmall": "Prise en charge clinique",
+    "trustDiscrete": "Très discret",
+    "trustDiscreteSmall": "Technologie invisible",
+    "imageAlt": "Audiologiste examinant l’oreille d’un patient équipé d’un casque d’audiométrie à Douala",
+    "badgeTitle": "Consultation à Douala",
+    "badgePlace": "Kotto Briquiny",
+    "open": "Ouvert"
+  },
+  "offer": {
+    "kicker": "Offre découverte",
+    "limited": "Places limitées",
+    "titleBefore": "Bilan auditif complet à",
+    "body": "Otoscopie vidéo, audiométrie tonale et vocale, diagnostic personnalisé et conseils d’adaptation avec Edith Kingue.",
+    "cta": "Profiter de l’offre"
+  },
+  "services": {
+    "eyebrow": "Excellence clinique",
+    "title": "Nos services audiologiques spécialisés",
+    "lead": "Des solutions médicales et technologiques pour préserver, restaurer et améliorer votre capital auditif.",
+    "bookFor": "Prendre rendez-vous pour {title}",
+    "book": "Prendre rendez-vous",
+    "items": [
+      {
+        "title": "Bilan auditif complet & dépistage",
+        "description": "Otoscopie, tympanométrie, audiométrie tonale et vocale en cabine insonorisée pour mesurer précisément vos seuils auditifs."
+      },
+      {
+        "title": "Appareillage sur mesure",
+        "description": "Des prothèses numériques choisies selon votre audition, votre morphologie et votre quotidien professionnel ou familial."
+      },
+      {
+        "title": "Réglage, réparation & entretien",
+        "description": "Nettoyage par ultrasons, remplacement des filtres et recalibrage fréquentiel dans notre laboratoire à Douala."
+      },
+      {
+        "title": "Suivi personnalisé illimité",
+        "description": "Nous ajustons vos réglages dans la durée et suivons l’évolution de votre audition sans précipitation."
+      },
+      {
+        "title": "Soulagement des acouphènes",
+        "description": "Protocoles d’habituation, thérapie sonore et masquage acoustique personnalisés pour retrouver des nuits plus sereines."
+      },
+      {
+        "title": "Protections auditives sur mesure",
+        "description": "Bouchons anatomiques pour l’industrie, la musique, la natation et les environnements sonores exigeants."
+      }
+    ]
+  },
+  "metrics": {
+    "yearsValue": "+08 ans",
+    "years": "d’expertise clinique",
+    "patientsValue": "+1 500",
+    "patients": "patients accompagnés",
+    "satisfactionValue": "98,6%",
+    "satisfaction": "de satisfaction",
+    "lifetimeValue": "À vie",
+    "lifetime": "suivi des réglages"
+  },
+  "science": {
+    "eyebrow": "Pourquoi nous choisir",
+    "title": "La rigueur scientifique, avec l’empathie humaine",
+    "body": "La baisse auditive isole progressivement. Notre vocation est de restaurer votre sérénité avec des mesures précises, une technologie discrète et une écoute sincère.",
+    "certTitle": "Centre audiologique spécialisé",
+    "certSmall": "Protocoles ORL et accompagnement personnalisé",
+    "pillars": [
+      {
+        "title": "Écoute humaine & empathie",
+        "description": "Chaque séance respecte votre rythme, vos habitudes et votre vécu acoustique."
+      },
+      {
+        "title": "Mesures haute précision",
+        "description": "Des équipements audiométriques informatisés pour des réglages au décibel près."
+      },
+      {
+        "title": "Technologies internationales",
+        "description": "Phonak, Oticon, Signia et Starkey avec accompagnement et garantie."
+      },
+      {
+        "title": "Cabinet accessible à Douala",
+        "description": "À Kotto Briquiny, avec parking et accueil adapté aux seniors."
+      }
+    ]
+  },
+  "tech": {
+    "imageAlt": "Appareils auditifs rechargeables et discrets au cabinet Empire Audition",
+    "badgeTitle": "Plus de 30 h d’autonomie",
+    "badgeSmall": "Recharge rapide par induction",
+    "eyebrow": "Technologies auditives",
+    "title": "L’excellence acoustique, presque imperceptible",
+    "body": "Les appareils récents séparent les voix du bruit ambiant et s’adaptent automatiquement à votre environnement.",
+    "feature1": "Intra-auriculaires invisibles",
+    "feature1Small": "Moulés au millimètre près pour une discrétion totale.",
+    "feature2": "Micro-contours rechargeables",
+    "feature2Small": "Une journée complète d’écoute sans manipuler de piles.",
+    "feature3": "Filtration intelligente",
+    "feature3Small": "Voix plus nettes au restaurant, en réunion ou dans la circulation.",
+    "cta": "Demander un essai gratuit"
+  },
+  "expert": {
+    "imageAlt": "Edith Kingue en blouse d’audioprothésiste présentant un appareil auditif dans son cabinet",
+    "eyebrow": "Direction clinique",
+    "role": "Audioprothésiste générale & CEO d’Empire Audition",
+    "quote": "Bien entendre n’est pas un luxe. C’est le lien sensoriel qui nous unit à ceux que nous aimons.",
+    "body": "Edith Kingue met son expertise et sa sensibilité au service de la santé auditive à Douala, avec une réhabilitation progressive où le confort du patient compte autant que la précision acoustique.",
+    "cred1": "Technicienne en audition",
+    "cred2": "Accompagnement des familles",
+    "cred3": "Spécialiste de la rééducation auditive",
+    "cred4": "Consultations à Kotto, Douala"
+  },
+  "testimonials": {
+    "eyebrow": "Expériences patients",
+    "title": "Ils ont retrouvé la joie d’écouter",
+    "lead": "Des parcours de patients accompagnés avec précision, patience et bienveillance à Douala.",
+    "starsAria": "5 étoiles",
+    "items": [
+      {
+        "quote": "Grâce à Mme Kingue, j’ai redécouvert les conversations en famille sans faire répéter mes petits-enfants. Le bilan a été rassurant et l’accompagnement d’une douceur remarquable.",
+        "name": "Papa Emmanuel M.",
+        "role": "Cadre retraité · Bonapriso"
+      },
+      {
+        "quote": "Un professionnalisme rare à Douala. Mes appareils sont invisibles et mes migraines dues à la fatigue d’écouter ont disparu.",
+        "name": "Clarisse N.",
+        "role": "Directrice financière · Akwa"
+      },
+      {
+        "quote": "Mes acouphènes troublaient mon sommeil depuis trois ans. Le protocole personnalisé d’Empire Audition a transformé mes nuits.",
+        "name": "Théodore K.",
+        "role": "Enseignant · Bonamoussadi"
+      }
+    ]
+  },
+  "booking": {
+    "eyebrow": "Réservation directe",
+    "title": "Prendre rendez-vous au cabinet",
+    "lead": "Indiquez votre besoin. Vous pourrez transmettre votre demande directement à notre équipe sur WhatsApp.",
+    "name": "Nom complet *",
+    "namePlaceholder": "Ex. Pierre Bella",
+    "phone": "Téléphone / WhatsApp *",
+    "phonePlaceholder": "+237 6XX XX XX XX",
+    "service": "Prestation souhaitée",
+    "date": "Date souhaitée",
+    "message": "Message facultatif",
+    "messagePlaceholder": "Décrivez brièvement votre gêne ou votre besoin.",
+    "submit": "Préparer ma demande",
+    "readyTitle": "Votre demande est prête.",
+    "readyBody": "Vérifiez les informations puis envoyez-les à notre équipe.",
+    "sendWhatsapp": "Envoyer sur WhatsApp",
+    "contactAria": "Coordonnées du cabinet",
+    "centerLabel": "Centre audiologique · Douala",
+    "address": "Adresse",
+    "addressValue": "Kotto, rue des Pavés, Briquiny, Douala",
+    "phoneLabel": "Ligne directe",
+    "hours": "Horaires",
+    "hoursValue": "Lun–Ven : 8h30–18h\nSam : 9h–14h",
+    "chatWhatsapp": "Échanger sur WhatsApp",
+    "mapAlt": "Plan d’accès au cabinet Empire Audition à Kotto Briquiny, Douala",
+    "directions": "Voir l’itinéraire · Parking disponible",
+    "whatsappIntro": "Bonjour Empire Audition, je souhaite prendre rendez-vous.",
+    "whatsappName": "Nom",
+    "whatsappPhone": "Téléphone",
+    "whatsappService": "Prestation",
+    "whatsappDate": "Date souhaitée",
+    "whatsappNote": "Précision",
+    "services": [
+      "Bilan auditif complet – 10 000 FCFA",
+      "Essai d’appareils auditifs – 30 jours",
+      "Réglage ou entretien d’appareils",
+      "Consultation acouphènes",
+      "Protection auditive sur mesure"
+    ]
+  },
+  "footer": {
+    "blurb": "Bilans auditifs, appareils discrets, rééducation et suivi personnalisé au cœur de Douala.",
+    "trust": "Centre audiologique spécialisé",
+    "hearing": "Votre audition",
+    "linkScreening": "Bilan auditif complet",
+    "linkDevices": "Appareils auditifs",
+    "linkCare": "Notre accompagnement",
+    "linkReviews": "Avis des patients",
+    "clinic": "Le cabinet",
+    "hoursShort": "Lun–Ven 8h30–18h · Sam 9h–14h",
+    "help": "Besoin d’aide ?",
+    "helpBody": "Un doute sur votre audition ou un appareil à régler ? Notre équipe vous répond.",
+    "ask": "Demander conseil",
+    "rights": "© {year} Empire Audition Douala. Tous droits réservés.",
+    "disclaimer": "Informations de santé à visée informative — seul un examen clinique permet un diagnostic."
+  },
+  "seo": {
+    "title": "Empire Audition | Audioprothésiste & Bilan Auditif",
+    "description": "Cabinet d’audiologie à Douala : bilan auditif, appareils auditifs invisibles et rechargeables, acouphènes, réglage et suivi personnalisé avec Edith Kingue.",
+    "ogImageAlt": "Consultation audiologique chez Empire Audition à Douala"
+  }
+}

@@ -13,7 +13,16 @@ import {
   Sparkles,
   Star,
 } from 'lucide-vue-next'
-import { pillars, services, testimonials } from '~/data/content'
+import { pillarMeta, serviceMeta, testimonialMeta } from '~/data/content'
+
+const { t, tm } = useI18n()
+
+type TextItem = { title: string, description: string }
+type ReviewItem = { quote: string, name: string, role: string }
+
+const serviceItems = computed(() => tm('services.items') as TextItem[])
+const pillarItems = computed(() => tm('science.pillars') as TextItem[])
+const reviewItems = computed(() => tm('testimonials.items') as ReviewItem[])
 </script>
 
 <template>
@@ -22,11 +31,11 @@ import { pillars, services, testimonials } from '~/data/content'
       <div class="container">
         <div class="offer" data-reveal>
           <div>
-            <p class="offer-kicker"><span>Offre découverte</span><Clock3 :size="16" aria-hidden="true" /> Places limitées</p>
-            <h2 id="offre-title">Bilan auditif complet à <strong>10 000 FCFA</strong> <del>15 000 FCFA</del></h2>
-            <p>Otoscopie vidéo, audiométrie tonale et vocale, diagnostic personnalisé et conseils d’adaptation avec Edith Kingue.</p>
+            <p class="offer-kicker"><span>{{ t('offer.kicker') }}</span><Clock3 :size="16" aria-hidden="true" /> {{ t('offer.limited') }}</p>
+            <h2 id="offre-title">{{ t('offer.titleBefore') }} <strong>10 000 FCFA</strong> <del>15 000 FCFA</del></h2>
+            <p>{{ t('offer.body') }}</p>
           </div>
-          <a class="button button--gold" href="#rendez-vous">Profiter de l’offre <ArrowRight :size="19" aria-hidden="true" /></a>
+          <a class="button button--gold" href="#rendez-vous">{{ t('offer.cta') }} <ArrowRight :size="19" aria-hidden="true" /></a>
         </div>
       </div>
     </section>
@@ -34,16 +43,22 @@ import { pillars, services, testimonials } from '~/data/content'
     <section id="services" class="section">
       <div class="container">
         <header class="section-heading" data-reveal>
-          <p class="eyebrow">Excellence clinique</p>
-          <h2>Nos services audiologiques spécialisés</h2>
-          <p>Des solutions médicales et technologiques pour préserver, restaurer et améliorer votre capital auditif.</p>
+          <p class="eyebrow">{{ t('services.eyebrow') }}</p>
+          <h2>{{ t('services.title') }}</h2>
+          <p>{{ t('services.lead') }}</p>
         </header>
         <div class="service-grid">
-          <article v-for="(service, index) in services" :key="service.title" class="service-card" :style="{ '--delay': `${index * 60}ms` }" data-reveal>
-            <span class="service-icon" :class="`service-icon--${service.tone}`"><component :is="service.icon" :size="27" aria-hidden="true" /></span>
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
-            <a href="#rendez-vous" :aria-label="`Prendre rendez-vous pour ${service.title}`">Prendre rendez-vous <ArrowRight :size="17" aria-hidden="true" /></a>
+          <article
+            v-for="(meta, index) in serviceMeta"
+            :key="serviceItems[index]?.title ?? index"
+            class="service-card"
+            :style="{ '--delay': `${index * 60}ms` }"
+            data-reveal
+          >
+            <span class="service-icon" :class="`service-icon--${meta.tone}`"><component :is="meta.icon" :size="27" aria-hidden="true" /></span>
+            <h3>{{ serviceItems[index]?.title }}</h3>
+            <p>{{ serviceItems[index]?.description }}</p>
+            <a href="#rendez-vous" :aria-label="t('services.bookFor', { title: serviceItems[index]?.title ?? '' })">{{ t('services.book') }} <ArrowRight :size="17" aria-hidden="true" /></a>
           </article>
         </div>
       </div>
@@ -52,23 +67,28 @@ import { pillars, services, testimonials } from '~/data/content'
     <section id="cabinet" class="section section--tinted">
       <div class="container">
         <dl class="metrics" data-reveal>
-          <div><dt>+08 ans</dt><dd>d’expertise clinique</dd></div>
-          <div><dt>+1 500</dt><dd>patients accompagnés</dd></div>
-          <div><dt>98,6%</dt><dd>de satisfaction</dd></div>
-          <div><dt>À vie</dt><dd>suivi des réglages</dd></div>
+          <div><dt>{{ t('metrics.yearsValue') }}</dt><dd>{{ t('metrics.years') }}</dd></div>
+          <div><dt>{{ t('metrics.patientsValue') }}</dt><dd>{{ t('metrics.patients') }}</dd></div>
+          <div><dt>{{ t('metrics.satisfactionValue') }}</dt><dd>{{ t('metrics.satisfaction') }}</dd></div>
+          <div><dt>{{ t('metrics.lifetimeValue') }}</dt><dd>{{ t('metrics.lifetime') }}</dd></div>
         </dl>
         <div class="science-grid">
           <div class="science-copy" data-reveal>
-            <p class="eyebrow">Pourquoi nous choisir</p>
-            <h2>La rigueur scientifique, avec l’empathie humaine</h2>
-            <p>La baisse auditive isole progressivement. Notre vocation est de restaurer votre sérénité avec des mesures précises, une technologie discrète et une écoute sincère.</p>
-            <div class="certification"><ShieldCheck :size="26" aria-hidden="true" /><span><strong>Centre audiologique spécialisé</strong><small>Protocoles ORL et accompagnement personnalisé</small></span></div>
+            <p class="eyebrow">{{ t('science.eyebrow') }}</p>
+            <h2>{{ t('science.title') }}</h2>
+            <p>{{ t('science.body') }}</p>
+            <div class="certification"><ShieldCheck :size="26" aria-hidden="true" /><span><strong>{{ t('science.certTitle') }}</strong><small>{{ t('science.certSmall') }}</small></span></div>
           </div>
           <div class="pillar-grid">
-            <article v-for="(pillar, index) in pillars" :key="pillar.title" :style="{ '--delay': `${index * 70}ms` }" data-reveal>
-              <component :is="pillar.icon" :size="22" aria-hidden="true" />
-              <h3>{{ pillar.title }}</h3>
-              <p>{{ pillar.description }}</p>
+            <article
+              v-for="(meta, index) in pillarMeta"
+              :key="pillarItems[index]?.title ?? index"
+              :style="{ '--delay': `${index * 70}ms` }"
+              data-reveal
+            >
+              <component :is="meta.icon" :size="22" aria-hidden="true" />
+              <h3>{{ pillarItems[index]?.title }}</h3>
+              <p>{{ pillarItems[index]?.description }}</p>
             </article>
           </div>
         </div>
@@ -82,24 +102,24 @@ import { pillars, services, testimonials } from '~/data/content'
             src="/images/appareils-auditifs-1536.webp"
             srcset="/images/appareils-auditifs-384.webp 384w, /images/appareils-auditifs-512.webp 512w, /images/appareils-auditifs-1536.webp 1536w"
             sizes="(max-width: 960px) calc(100vw - 48px), 50vw"
-            alt="Appareils auditifs rechargeables et discrets au cabinet Empire Audition"
+            :alt="t('tech.imageAlt')"
             width="1536"
             height="864"
             loading="lazy"
             decoding="async"
           >
-          <div class="technology-badge"><BatteryCharging :size="23" aria-hidden="true" /><span><strong>Plus de 30 h d’autonomie</strong><small>Recharge rapide par induction</small></span><Bluetooth :size="20" aria-label="Bluetooth" /></div>
+          <div class="technology-badge"><BatteryCharging :size="23" aria-hidden="true" /><span><strong>{{ t('tech.badgeTitle') }}</strong><small>{{ t('tech.badgeSmall') }}</small></span><Bluetooth :size="20" aria-label="Bluetooth" /></div>
         </div>
         <div class="technology-copy" data-reveal>
-          <p class="eyebrow">Technologies auditives</p>
-          <h2>L’excellence acoustique, presque imperceptible</h2>
-          <p>Les appareils récents séparent les voix du bruit ambiant et s’adaptent automatiquement à votre environnement.</p>
+          <p class="eyebrow">{{ t('tech.eyebrow') }}</p>
+          <h2>{{ t('tech.title') }}</h2>
+          <p>{{ t('tech.body') }}</p>
           <ul class="feature-list">
-            <li><Ear aria-hidden="true" /><span><strong>Intra-auriculaires invisibles</strong><small>Moulés au millimètre près pour une discrétion totale.</small></span></li>
-            <li><BatteryCharging aria-hidden="true" /><span><strong>Micro-contours rechargeables</strong><small>Une journée complète d’écoute sans manipuler de piles.</small></span></li>
-            <li><Sparkles aria-hidden="true" /><span><strong>Filtration intelligente</strong><small>Voix plus nettes au restaurant, en réunion ou dans la circulation.</small></span></li>
+            <li><Ear aria-hidden="true" /><span><strong>{{ t('tech.feature1') }}</strong><small>{{ t('tech.feature1Small') }}</small></span></li>
+            <li><BatteryCharging aria-hidden="true" /><span><strong>{{ t('tech.feature2') }}</strong><small>{{ t('tech.feature2Small') }}</small></span></li>
+            <li><Sparkles aria-hidden="true" /><span><strong>{{ t('tech.feature3') }}</strong><small>{{ t('tech.feature3Small') }}</small></span></li>
           </ul>
-          <a class="button button--navy" href="#rendez-vous">Demander un essai gratuit <ArrowRight :size="19" aria-hidden="true" /></a>
+          <a class="button button--navy" href="#rendez-vous">{{ t('tech.cta') }} <ArrowRight :size="19" aria-hidden="true" /></a>
         </div>
       </div>
     </section>
@@ -112,7 +132,7 @@ import { pillars, services, testimonials } from '~/data/content'
               src="/images/edith-clinique-640.webp"
               srcset="/images/edith-clinique-640.webp 640w, /images/edith-clinique-1280.webp 1280w"
               sizes="(max-width: 960px) calc(100vw - 52px), 38vw"
-              alt="Edith Kingue en blouse d’audioprothésiste présentant un appareil auditif dans son cabinet"
+              :alt="t('expert.imageAlt')"
               width="1280"
               height="1280"
               loading="lazy"
@@ -120,16 +140,16 @@ import { pillars, services, testimonials } from '~/data/content'
             >
           </div>
           <div class="expert-copy" data-reveal>
-            <p class="eyebrow">Direction clinique</p>
+            <p class="eyebrow">{{ t('expert.eyebrow') }}</p>
             <h2>Edith Kingue</h2>
-            <p class="expert-role">Audioprothésiste générale & CEO d’Empire Audition</p>
-            <blockquote>« Bien entendre n’est pas un luxe. C’est le lien sensoriel qui nous unit à ceux que nous aimons. »</blockquote>
-            <p>Edith Kingue met son expertise et sa sensibilité au service de la santé auditive à Douala, avec une réhabilitation progressive où le confort du patient compte autant que la précision acoustique.</p>
+            <p class="expert-role">{{ t('expert.role') }}</p>
+            <blockquote>« {{ t('expert.quote') }} »</blockquote>
+            <p>{{ t('expert.body') }}</p>
             <ul class="credentials">
-              <li><GraduationCap aria-hidden="true" /> Technicienne en audition</li>
-              <li><HeartHandshake aria-hidden="true" /> Accompagnement des familles</li>
-              <li><Check aria-hidden="true" /> Spécialiste de la rééducation auditive</li>
-              <li><MapPin aria-hidden="true" /> Consultations à Kotto, Douala</li>
+              <li><GraduationCap aria-hidden="true" /> {{ t('expert.cred1') }}</li>
+              <li><HeartHandshake aria-hidden="true" /> {{ t('expert.cred2') }}</li>
+              <li><Check aria-hidden="true" /> {{ t('expert.cred3') }}</li>
+              <li><MapPin aria-hidden="true" /> {{ t('expert.cred4') }}</li>
             </ul>
           </div>
         </article>
@@ -139,15 +159,23 @@ import { pillars, services, testimonials } from '~/data/content'
     <section id="temoignages" class="section">
       <div class="container">
         <header class="section-heading" data-reveal>
-          <p class="eyebrow">Expériences patients</p>
-          <h2>Ils ont retrouvé la joie d’écouter</h2>
-          <p>Des parcours de patients accompagnés avec précision, patience et bienveillance à Douala.</p>
+          <p class="eyebrow">{{ t('testimonials.eyebrow') }}</p>
+          <h2>{{ t('testimonials.title') }}</h2>
+          <p>{{ t('testimonials.lead') }}</p>
         </header>
         <div class="testimonial-grid">
-          <figure v-for="(review, index) in testimonials" :key="review.name" :style="{ '--delay': `${index * 70}ms` }" data-reveal>
-            <div class="stars" aria-label="5 étoiles"><Star v-for="star in 5" :key="star" :size="18" fill="currentColor" aria-hidden="true" /></div>
-            <blockquote>« {{ review.quote }} »</blockquote>
-            <figcaption><span>{{ review.initials }}</span><span><strong>{{ review.name }}</strong><small>{{ review.role }}</small></span></figcaption>
+          <figure
+            v-for="(meta, index) in testimonialMeta"
+            :key="reviewItems[index]?.name ?? index"
+            :style="{ '--delay': `${index * 70}ms` }"
+            data-reveal
+          >
+            <div class="stars" :aria-label="t('testimonials.starsAria')"><Star v-for="star in 5" :key="star" :size="18" fill="currentColor" aria-hidden="true" /></div>
+            <blockquote>« {{ reviewItems[index]?.quote }} »</blockquote>
+            <figcaption>
+              <span>{{ meta.initials }}</span>
+              <span><strong>{{ reviewItems[index]?.name }}</strong><small>{{ reviewItems[index]?.role }}</small></span>
+            </figcaption>
           </figure>
         </div>
       </div>

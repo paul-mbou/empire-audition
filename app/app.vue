@@ -4,9 +4,13 @@ import '@fontsource-variable/plus-jakarta-sans'
 
 useReveal()
 
-const title = 'Empire Audition | Audioprothésiste & Bilan Auditif'
-const description = 'Cabinet d’audiologie à Douala : bilan auditif, appareils auditifs invisibles et rechargeables, acouphènes, réglage et suivi personnalisé avec Edith Kingue.'
+const { t, locale } = useI18n()
 const siteUrl = 'https://empireaudition.cm'
+
+const title = computed(() => t('seo.title'))
+const description = computed(() => t('seo.description'))
+const canonical = computed(() => locale.value === 'en' ? `${siteUrl}/en` : siteUrl)
+const ogLocale = computed(() => locale.value === 'en' ? 'en_CM' : 'fr_CM')
 
 useSeoMeta({
   title,
@@ -14,10 +18,10 @@ useSeoMeta({
   ogTitle: title,
   ogDescription: description,
   ogType: 'website',
-  ogLocale: 'fr_CM',
-  ogUrl: siteUrl,
+  ogLocale,
+  ogUrl: canonical,
   ogImage: `${siteUrl}/images/audiologiste-patient-1152.webp`,
-  ogImageAlt: 'Consultation audiologique chez Empire Audition à Douala',
+  ogImageAlt: () => t('seo.ogImageAlt'),
   twitterCard: 'summary_large_image',
   twitterTitle: title,
   twitterDescription: description,
@@ -25,8 +29,14 @@ useSeoMeta({
   robots: 'index, follow, max-image-preview:large',
 })
 
-useHead({
-  link: [{ rel: 'canonical', href: siteUrl }],
+useHead(() => ({
+  htmlAttrs: { lang: locale.value === 'en' ? 'en' : 'fr' },
+  link: [
+    { rel: 'canonical', href: canonical.value },
+    { rel: 'alternate', hreflang: 'fr', href: siteUrl },
+    { rel: 'alternate', hreflang: 'en', href: `${siteUrl}/en` },
+    { rel: 'alternate', hreflang: 'x-default', href: siteUrl },
+  ],
   meta: [
     { name: 'geo.region', content: 'CM-LT' },
     { name: 'geo.placename', content: 'Douala' },
@@ -39,7 +49,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': ['MedicalBusiness', 'LocalBusiness'],
         name: 'Empire Audition Douala',
-        description,
+        description: description.value,
         image: `${siteUrl}/images/audiologiste-patient-1152.webp`,
         telephone: '+237695195832',
         priceRange: '₣₣',
@@ -49,27 +59,26 @@ useHead({
           addressLocality: 'Douala',
           addressCountry: 'CM',
         },
-        areaServed: ['Douala', 'Littoral', 'Cameroun'],
+        areaServed: ['Douala', 'Littoral', 'Cameroon'],
         openingHoursSpecification: [
           { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:30', closes: '18:00' },
           { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '14:00' },
         ],
         medicalSpecialty: 'Audiology',
-        url: siteUrl,
+        url: canonical.value,
+        inLanguage: locale.value === 'en' ? 'en' : 'fr',
       }),
     },
   ],
-})
+}))
 </script>
 
 <template>
   <div>
-    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <a class="skip-link" href="#contenu">{{ t('skipToContent') }}</a>
     <SiteHeader />
     <main id="contenu">
-      <HeroSection />
-      <ClinicalSections />
-      <BookingSection />
+      <NuxtPage />
     </main>
     <SiteFooter />
   </div>

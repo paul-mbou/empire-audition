@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { AudioWaveform, CalendarDays, CheckCircle2, Ear, EyeOff, MapPin } from 'lucide-vue-next'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -18,36 +20,36 @@ import { AudioWaveform, CalendarDays, CheckCircle2, Ear, EyeOff, MapPin } from '
       <div class="hero-copy">
         <p class="eyebrow eyebrow--light hero-eyebrow">
           <span class="status-dot" />
-          Cabinet de référence en audiologie à Douala
+          {{ t('hero.eyebrow') }}
         </p>
-        <h1>Réentendez la vie, <em>pleinement.</em></h1>
+        <h1>{{ t('hero.title') }} <em>{{ t('hero.titleEm') }}</em></h1>
         <p class="hero-lead">
-          Bilans auditifs complets, accompagnement médical sur mesure et appareils discrets pour retrouver le plaisir d’écouter vos proches avec clarté.
+          {{ t('hero.lead') }}
         </p>
 
         <div class="hero-actions">
           <a class="button button--gold" href="#rendez-vous">
             <CalendarDays :size="20" aria-hidden="true" />
-            Prendre rendez-vous
+            {{ t('hero.ctaBook') }}
           </a>
           <a class="button button--glass" href="#services">
             <AudioWaveform :size="20" aria-hidden="true" />
-            Faire un bilan auditif
+            {{ t('hero.ctaScreening') }}
           </a>
         </div>
 
-        <ul class="trust-list" aria-label="Nos engagements">
+        <ul class="trust-list" :aria-label="t('hero.trustAria')">
           <li>
             <CheckCircle2 aria-hidden="true" />
-            <span><strong>30 jours</strong><small>Essai sans engagement</small></span>
+            <span><strong>{{ t('hero.trust30') }}</strong><small>{{ t('hero.trust30Small') }}</small></span>
           </li>
           <li>
             <Ear aria-hidden="true" />
-            <span><strong>Sur mesure</strong><small>Prise en charge clinique</small></span>
+            <span><strong>{{ t('hero.trustCustom') }}</strong><small>{{ t('hero.trustCustomSmall') }}</small></span>
           </li>
           <li>
             <EyeOff aria-hidden="true" />
-            <span><strong>Très discret</strong><small>Technologie invisible</small></span>
+            <span><strong>{{ t('hero.trustDiscrete') }}</strong><small>{{ t('hero.trustDiscreteSmall') }}</small></span>
           </li>
         </ul>
       </div>
@@ -58,7 +60,7 @@ import { AudioWaveform, CalendarDays, CheckCircle2, Ear, EyeOff, MapPin } from '
             src="/images/audiologiste-patient-1152.webp"
             srcset="/images/audiologiste-patient-640.webp 640w, /images/audiologiste-patient-960.webp 960w, /images/audiologiste-patient-1152.webp 1152w"
             sizes="(max-width: 680px) calc(100vw - 32px), (max-width: 960px) 576px, 40vw"
-            alt="Audiologiste examinant l’oreille d’un patient équipé d’un casque d’audiométrie à Douala"
+            :alt="t('hero.imageAlt')"
             width="1152"
             height="864"
             fetchpriority="high"
@@ -66,8 +68,8 @@ import { AudioWaveform, CalendarDays, CheckCircle2, Ear, EyeOff, MapPin } from '
           >
           <div class="clinic-badge">
             <span class="clinic-icon"><MapPin :size="20" aria-hidden="true" /></span>
-            <span><strong>Consultation à Douala</strong><small>Kotto Briquiny</small></span>
-            <span class="open-badge">Ouvert</span>
+            <span><strong>{{ t('hero.badgeTitle') }}</strong><small>{{ t('hero.badgePlace') }}</small></span>
+            <span class="open-badge">{{ t('hero.open') }}</span>
           </div>
         </div>
       </div>

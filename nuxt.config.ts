@@ -1,10 +1,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-09',
   devtools: { enabled: true },
+  modules: ['@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
   app: {
     head: {
-      htmlAttrs: { lang: 'fr' },
       viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
       link: [
         { rel: 'icon', type: 'image/webp', href: '/images/logo-96.webp' },
@@ -19,15 +19,32 @@ export default defineNuxtConfig({
       ],
     },
   },
+  i18n: {
+    locales: [
+      { code: 'fr', language: 'fr-CM', name: 'Français', file: 'fr.json' },
+      { code: 'en', language: 'en-CM', name: 'English', file: 'en.json' },
+    ],
+    defaultLocale: 'fr',
+    strategy: 'prefix_except_default',
+    langDir: 'locales',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      fallbackLocale: 'fr',
+    },
+    baseUrl: 'https://empireaudition.cm',
+  },
   nitro: {
     preset: 'static',
     prerender: {
-      routes: ['/'],
+      routes: ['/', '/en'],
       crawlLinks: true,
     },
   },
   routeRules: {
     '/': { prerender: true },
+    '/en': { prerender: true },
   },
   typescript: {
     strict: true,

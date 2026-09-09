@@ -6,12 +6,14 @@ export function useReveal() {
     observer?.unobserve(element)
   }
 
-  onMounted(() => {
+  function setup() {
+    observer?.disconnect()
+
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const elements = document.querySelectorAll<HTMLElement>('[data-reveal]')
+    const elements = document.querySelectorAll<HTMLElement>('[data-reveal]:not(.is-visible)')
 
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      elements.forEach(reveal)
+      document.querySelectorAll<HTMLElement>('[data-reveal]').forEach(reveal)
       return
     }
 
@@ -31,6 +33,16 @@ export function useReveal() {
       if (alreadyInView) reveal(element)
       else observer?.observe(element)
     })
+  }
+
+  onMounted(() => {
+    setup()
+  })
+
+  const route = useRoute()
+  watch(() => route.fullPath, async () => {
+    await nextTick()
+    requestAnimationFrame(setup)
   })
 
   onBeforeUnmount(() => observer?.disconnect())
