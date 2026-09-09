@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import '@fontsource-variable/inter'
 import '@fontsource-variable/plus-jakarta-sans'
+import { useI18n } from 'vue-i18n'
 
 useReveal()
 

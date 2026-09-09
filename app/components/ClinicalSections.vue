@@ -13,6 +13,7 @@ import {
   Sparkles,
   Star,
 } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
 import { pillarMeta, serviceMeta, testimonialMeta } from '~/data/content'
 
 const { t, tm, rt } = useI18n()

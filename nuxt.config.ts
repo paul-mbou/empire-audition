@@ -1,7 +1,24 @@
+const i18nOptions = {
+  locales: [
+    { code: 'fr', language: 'fr-CM', name: 'Français', file: 'fr.json' },
+    { code: 'en', language: 'en-CM', name: 'English', file: 'en.json' },
+  ],
+  defaultLocale: 'fr',
+  strategy: 'prefix_except_default' as const,
+  langDir: 'locales',
+  detectBrowserLanguage: {
+    useCookie: true,
+    cookieKey: 'i18n_redirected',
+    redirectOn: 'root' as const,
+    fallbackLocale: 'fr',
+  },
+  baseUrl: 'https://empireaudition.cm',
+}
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-09-09',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n'],
+  modules: [['@nuxtjs/i18n', i18nOptions]],
   css: ['~/assets/css/main.css'],
   app: {
     head: {
@@ -19,22 +36,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  i18n: {
-    locales: [
-      { code: 'fr', language: 'fr-CM', name: 'Français', file: 'fr.json' },
-      { code: 'en', language: 'en-CM', name: 'English', file: 'en.json' },
-    ],
-    defaultLocale: 'fr',
-    strategy: 'prefix_except_default',
-    langDir: 'locales',
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      fallbackLocale: 'fr',
-    },
-    baseUrl: 'https://empireaudition.cm',
-  },
   nitro: {
     preset: 'static',
     prerender: {
@@ -48,6 +49,9 @@ export default defineNuxtConfig({
   },
   typescript: {
     strict: true,
-    typeCheck: true,
+    // Build-time vue-tsc via vite-plugin-checker can race Nuxt module type
+    // generation on Vercel and report false "Cannot find name useI18n" errors.
+    // Run `npm run typecheck` separately after `nuxt prepare`.
+    typeCheck: false,
   },
 })

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Clock3, MapPin, Phone, ShieldCheck } from 'lucide-vue-next'
+import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
