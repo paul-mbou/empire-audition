@@ -1,12 +1,17 @@
 export function useReveal() {
   let observer: IntersectionObserver | undefined
 
+  function reveal(element: Element) {
+    element.classList.add('is-visible')
+    observer?.unobserve(element)
+  }
+
   onMounted(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const elements = document.querySelectorAll<HTMLElement>('[data-reveal]')
 
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      elements.forEach(element => element.classList.add('is-visible'))
+      elements.forEach(reveal)
       return
     }
 
@@ -14,14 +19,18 @@ export function useReveal() {
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return
-          entry.target.classList.add('is-visible')
-          observer?.unobserve(entry.target)
+          reveal(entry.target)
         })
       },
-      { threshold: 0.12, rootMargin: '0px 0px -48px' },
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' },
     )
 
-    elements.forEach(element => observer?.observe(element))
+    elements.forEach((element) => {
+      const rect = element.getBoundingClientRect()
+      const alreadyInView = rect.top < window.innerHeight && rect.bottom > 0
+      if (alreadyInView) reveal(element)
+      else observer?.observe(element)
+    })
   })
 
   onBeforeUnmount(() => observer?.disconnect())

@@ -1487,16 +1487,21 @@ a {
   margin: 0;
 }
 
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(1.6rem);
-  transition: opacity 700ms var(--ease), transform 700ms var(--ease);
-  transition-delay: var(--delay, 0ms);
+[data-reveal].is-visible {
+  animation: reveal-up 700ms var(--ease) both;
+  animation-delay: var(--delay, 0ms);
 }
 
-[data-reveal].is-visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes hero-enter {
@@ -1504,12 +1509,22 @@ a {
     opacity: 0;
     transform: translateY(1.5rem);
   }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes visual-enter {
   from {
     opacity: 0;
     transform: translateX(2rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
 }
 
@@ -1523,6 +1538,11 @@ a {
   from {
     opacity: 0;
     transform: translateY(0.5rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -1770,8 +1790,7 @@ a {
     transition-duration: 0.01ms !important;
   }
 
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
+  [data-reveal].is-visible {
+    animation: none;
   }
 }
