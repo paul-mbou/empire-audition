@@ -1,1 +1,25 @@
+# Dependencies
 node_modules
+.npm-cache
+
+# Nuxt / Nitro
+.nuxt
+.output
+.data
+dist
+
+# Logs & OS
+*.log
+.DS_Store
+.fleet
+.idea
+.vscode
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Local tooling
+.vercel
+*.local
