@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { Building2, CalendarCheck, CheckCircle2, Clock3, MapPin, MessageCircle, Phone } from 'lucide-vue-next'
 
-const { t, tm, locale } = useI18n()
+const { t, tm, rt, locale } = useI18n()
 
-const serviceOptions = computed(() => tm('booking.services') as string[])
+const serviceOptions = computed(() =>
+  (tm('booking.services') as unknown[]).map(option => rt(option as never)),
+)
 const submitted = ref(false)
 const form = reactive({
   name: '',

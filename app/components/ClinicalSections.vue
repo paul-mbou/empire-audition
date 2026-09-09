@@ -15,14 +15,29 @@ import {
 } from 'lucide-vue-next'
 import { pillarMeta, serviceMeta, testimonialMeta } from '~/data/content'
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 
-type TextItem = { title: string, description: string }
-type ReviewItem = { quote: string, name: string, role: string }
+type TextItem = { title: unknown, description: unknown }
+type ReviewItem = { quote: unknown, name: unknown, role: unknown }
 
-const serviceItems = computed(() => tm('services.items') as TextItem[])
-const pillarItems = computed(() => tm('science.pillars') as TextItem[])
-const reviewItems = computed(() => tm('testimonials.items') as ReviewItem[])
+function resolveTextItems(key: string) {
+  return (tm(key) as TextItem[]).map(item => ({
+    title: rt(item.title as never),
+    description: rt(item.description as never),
+  }))
+}
+
+function resolveReviewItems(key: string) {
+  return (tm(key) as ReviewItem[]).map(item => ({
+    quote: rt(item.quote as never),
+    name: rt(item.name as never),
+    role: rt(item.role as never),
+  }))
+}
+
+const serviceItems = computed(() => resolveTextItems('services.items'))
+const pillarItems = computed(() => resolveTextItems('science.pillars'))
+const reviewItems = computed(() => resolveReviewItems('testimonials.items'))
 </script>
 
 <template>
