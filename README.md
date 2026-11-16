@@ -1,5 +1,10 @@
 # Empire Audition — Douala
 
+![Empire Audition](public/images/og-cover.jpg)
+
+![La clinique](public/images/edith-clinique-1280.webp)
+
+
 Site vitrine du cabinet d’audiologie **Empire Audition** (Kotto Briquiny, Douala). Bilans auditifs, appareillage et prise de rendez-vous — en français et en anglais.
 
 **Production :** [https://empireaudition.cm](https://empireaudition.cm)
