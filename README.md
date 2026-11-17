@@ -2,19 +2,19 @@
 
 ![Page d'accueil](docs/portfolio/home.png)
 
-Capture de l'accueil servi en local (`nuxt dev`), le domaine public ne répondant pas depuis cette machine.
+Capture de l'accueil en ligne.
 
 
 Site vitrine du cabinet d’audiologie **Empire Audition** (Kotto Briquiny, Douala). Bilans auditifs, appareillage et prise de rendez-vous — en français et en anglais.
 
-**Production :** [https://empireaudition.cm](https://empireaudition.cm)
+**Production :** [https://empire-audition.vercel.app/](https://empire-audition.vercel.app/)
 
 ## Stack
 
 - [Nuxt 4](https://nuxt.com/) (Vue 3) — génération statique
 - [@nuxtjs/i18n](https://i18n.nuxtjs.org/) — `fr` (défaut) et `en`
 - TypeScript strict
-- Déploiement prévu sur Vercel (`nuxt generate`)
+- Déployé sur Vercel (`nuxt generate`)
 
 ## Prérequis
 

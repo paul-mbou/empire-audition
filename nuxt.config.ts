@@ -12,7 +12,7 @@ const i18nOptions = {
     redirectOn: 'root' as const,
     fallbackLocale: 'fr',
   },
-  baseUrl: 'https://empireaudition.cm',
+  baseUrl: 'https://empire-audition.vercel.app',
 }
 
 export default defineNuxtConfig({

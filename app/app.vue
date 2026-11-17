@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n'
 useReveal()
 
 const { t, locale } = useI18n()
-const siteUrl = 'https://empireaudition.cm'
+const siteUrl = 'https://empire-audition.vercel.app'
 
 const title = computed(() => t('seo.title'))
 const description = computed(() => t('seo.description'))
